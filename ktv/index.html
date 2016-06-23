@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no">
+    <meta name="format-detection" content="telephone=no"> 
+    <meta name="format-detection" content="email=no">
+    <meta content="yes" content="apple-moblie-web-app-cappable">
+    <meta content="yes" content="apple-touch-fullscreen">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black"> 
+	<title>k歌</title>
+    <script type="text/javascript" src="js/rem.js"></script>
+	<link rel="stylesheet" href="css/public.css">
+</head>
+<body>
+    <div class="page">
+        <div class="content2">
+            <div class="container">
+                <!-- 搜索区域 -->
+                <div class="header-search">
+                    <form class="search-form">
+                        <i class="search-icon iconfont">&#xe607;</i>
+                        <div class="search-form-input">
+                            <input type="text" placeholder="搜索" id="search">
+                        </div>
+                    </form>
+                </div>
+                <!-- 焦点面板区域-->
+                <div class="banner-area" id="banner-area">
+                    <div class="banner-left" data-href="views/ktv_singers_category.html">
+                        <img src="imgs/cartoon2.jpg" alt="">
+                    </div>
+                    <div class="banner-right">
+                        <div class="right-item right-item-top">
+                            <div class="right-item-small right-small-left">
+                                <div class="right-item-detail">
+                                    <i class="right-item-icon"></i>
+                                    <div class="right-item-txt">手机传歌</div>
+                                </div>
+                            </div>
+                            <div class="right-item-small right-small-right">
+                                <div class="right-item-detail">
+                                    <i class="right-item-icon"></i>
+                                    <div class="right-item-txt">常唱歌曲</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="right-item right-item-bottom">
+                            <div class="right-item-detail">
+                                <i class="right-item-icon"></i>
+                                <div class="right-item-txt">排行榜</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            
+                <!-- 歌曲模块 -->
+                <div class="music-module" id="music-module">
+                    <!-- 最新热歌 -->
+                    <div class="music-box">
+                        <h3 class="music-title" data-href="views/ktv_hotmusic.html">
+                            <span class="flag"></span>最新热歌
+                            <div class="more-btn">更多</div>
+                        </h3>
+                        <ul class="music-list">
+                            <li class="music-item">
+                                <div class="music-visible-panel">
+                                    <div class="music-detail">
+                                        <h4 class="music-name">心中的太阳</h4>
+                                        <p class="music-singer">南拳妈妈</p>
+                                    </div>
+                                    
+                                    <div class="music-btn">
+                                        <div class="common-btn select-btn">
+                                            <i class="common-icon icon-add"></i>
+                                            <span class="common-txt">点歌</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <!-- 推荐歌单 -->
+                    <div class="music-box rec-music">
+                        <h3 class="music-title"  data-href="views/ktv_rectmusic.html">
+                            <span class="flag"></span>推荐歌单
+                            <div class="more-btn">更多</div>
+                        </h3>
+                        <ul class="rec-list">
+                            <li class="rec-item" data-href="views/ktv_rectmusic_detail.html">
+                                <div class="rec-img">
+                                    <img src="imgs/panda1.jpg" alt="">
+                                </div>
+                                <p>蒙面歌王</p>
+                            </li>
+                        </ul>
+                    </div>  
+                </div>
+            </div>
+        </div>
+        <!-- 底部导航区域 -->
+        <div class="footer">
+            <div class="tabbar" id="tabbar">
+                <div class="tabbar-item">
+                    <div class="tabbar-icon iconfont">&#xe603;</div>
+                    <p class="tabbar-label">遥控</p>
+                </div>
+                <div class="tabbar-item" data-href="views/ktv_havemusic.html">
+                    <div class="tabbar-icon iconfont">&#xe602;</div>
+                    <p class="tabbar-label">已点歌</p>
+                </div>
+                <div class="tabbar-item tabbar-item-center" data-href="index.html">
+                    <div class="tabbar-icon-center">
+                        <div class="tabbar-icon iconfont">&#xe601;</div>
+                        <p class="tabbar-label">K歌</p>
+                    </div>
+                </div>
+                <div class="tabbar-item">
+                    <div class="tabbar-icon iconfont">&#xe606;</div>
+                    <p class="tabbar-label">发现</p>
+                </div>
+                <div class="tabbar-item" data-href="views/ktv_mine.html">
+                    <div class="tabbar-icon iconfont">&#xe604;</div>
+                    <p class="tabbar-label">我的</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- loading动画加载 -->
+    <div class="loading-mask" id="loading-mask">
+        <div class="spinner">
+            <div class="spinner-container container1">
+                <div class="circle1"></div>
+                <div class="circle2"></div>
+                <div class="circle3"></div>
+                <div class="circle4"></div>
+            </div>
+            <div class="spinner-container container2">
+                <div class="circle1"></div>
+                <div class="circle2"></div>
+                <div class="circle3"></div>
+                <div class="circle4"></div>
+            </div>
+            <div class="spinner-container container3">
+                <div class="circle1"></div>
+                <div class="circle2"></div>
+                <div class="circle3"></div>
+                <div class="circle4"></div>
+            </div>
+        </div>
+    </div>
+    <script type="text/javascript" src="js/zepto.js"></script>
+    <script type="text/javascript" src="js/public.js"></script>
+    <script type="text/javascript">
+      $("#tabbar").on("tap", ".tabbar-item", function(){
+            var href = $(this).attr("data-href");
+            href && (window.location.href = href);
+      });
+      $("#music-module").on("tap", ".music-title", function(){
+            var href = $(this).attr("data-href");
+            href && (window.location.href = href);
+      });
+
+      $("#music-module").on("tap", ".rec-item", function(){
+            var href = $(this).attr("data-href");
+            href && (window.location.href = href);
+      })
+
+      $("#banner-area").on("tap", ".banner-left", function(){
+            var href = $(this).attr("data-href");
+            // alert(href);
+            href && (window.location.href = href);
+      });
+
+      // 搜索框聚焦时,跳转到搜索页面
+      $("#search").on("focus", function(){
+            window.location.href = "views/ktv_searchpage.html";
+      });
+
+      // loading动画
+     window.onload = function() {
+        $("#loading-mask").hide();
+     }
+    </script>
+</body>
+</html>

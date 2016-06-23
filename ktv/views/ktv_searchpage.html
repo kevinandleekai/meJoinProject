@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="initial-scale=1,maximum-scale=1, minimum-scale=1">
+
+    <meta name="format-detection" content="telephone=no"> 
+    <meta name="format-detection" content="email=no">
+    <meta content="yes" content="apple-moblie-web-app-cappable">
+    <meta content="yes" content="apple-touch-fullscreen">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black"> 
+	<title>k歌</title>
+	<script type="text/javascript" src="../js/rem.js"></script>
+	<link rel="stylesheet" href="../css/public.css">
+</head>
+<body>
+	<div class="page">
+		<!-- 头部导航条 -->
+		<div class="header">
+			<div class="navbar-top">
+			  	<i class="back-btn"></i>
+		  		<div class="search-box">
+			  		<form class="search-form">
+		                <i class="search-icon iconfont">&#xe607;</i>
+		                <div class="search-form-input">
+		                    <input type="text" placeholder="歌星 歌曲" id="search">
+		                </div>
+		            </form>
+	            </div>
+			  	<div class="music-record">搜索</div>				  	
+			</div>
+		</div>
+		<!-- 搜索内容 -->
+		<div class="content3">
+		   	<div class="search-wrap" id="search-wrap">
+				<ul class="seach-list">
+					<li class="search-item" data-href="ktv_singer_detail.html">
+						<div class="search-pic"><img src="../imgs/panda1.jpg" alt=""></div>
+						<div class="search-txt">功夫熊猫</div>
+					</li>
+					<li class="search-item" data-href="ktv_singer_detail.html">
+						<div class="search-pic"><img src="../imgs/panda1.jpg" alt=""></div>
+						<div class="search-txt">功夫熊猫</div>
+					</li>
+					<li class="search-item" data-href="ktv_singer_detail.html">
+						<div class="search-pic"><img src="../imgs/panda1.jpg" alt=""></div>
+						<div class="search-txt">功夫熊猫</div>
+					</li>
+					<li class="search-item" data-href="ktv_singer_detail.html">
+						<div class="search-pic"><img src="../imgs/panda1.jpg" alt=""></div>
+						<div class="search-txt">功夫熊猫</div>
+					</li>
+					<li class="search-item" data-href="ktv_singer_detail.html">
+						<div class="search-pic"><img src="../imgs/panda1.jpg" alt=""></div>
+						<div class="search-txt">功夫熊猫</div>
+					</li>
+					<li class="search-item" data-href="ktv_singer_detail.html">
+						<div class="search-pic"><img src="../imgs/panda1.jpg" alt=""></div>
+						<div class="search-txt">功夫熊猫</div>
+					</li>
+					<li class="search-item" data-href="ktv_singer_detail.html">
+						<div class="search-pic"><img src="../imgs/panda1.jpg" alt=""></div>
+						<div class="search-txt">功夫熊猫</div>
+					</li>
+					<li class="search-item" data-href="ktv_singer_detail.html">
+						<div class="search-pic"><img src="../imgs/panda1.jpg" alt=""></div>
+						<div class="search-txt">功夫熊猫</div>
+					</li>
+					<li class="search-item" data-href="ktv_singer_detail.html">
+						<div class="search-pic"><img src="../imgs/panda1.jpg" alt=""></div>
+						<div class="search-txt">功夫熊猫</div>
+					</li>
+					<li class="search-item" data-href="ktv_singer_detail.html">
+						<div class="search-pic"><img src="../imgs/panda1.jpg" alt=""></div>
+						<div class="search-txt">功夫熊猫</div>
+					</li>
+					<li class="search-item" data-href="ktv_singer_detail.html">
+						<div class="search-pic"><img src="../imgs/panda1.jpg" alt=""></div>
+						<div class="search-txt">功夫熊猫</div>
+					</li>
+					<li class="search-item" data-href="ktv_singer_detail.html">
+						<div class="search-pic"><img src="../imgs/panda1.jpg" alt=""></div>
+						<div class="search-txt">功夫熊猫</div>
+					</li>
+					<li class="search-item" data-href="ktv_singer_detail.html">
+						<div class="search-pic"><img src="../imgs/panda1.jpg" alt=""></div>
+						<div class="search-txt">功夫熊猫</div>
+					</li>
+					<li class="search-item" data-href="ktv_singer_detail.html">
+						<div class="search-pic"><img src="../imgs/panda1.jpg" alt=""></div>
+						<div class="search-txt">功夫熊猫</div>
+					</li>
+					<li class="search-item" data-href="ktv_singer_detail.html">
+						<div class="search-pic"><img src="../imgs/panda1.jpg" alt=""></div>
+						<div class="search-txt">功夫熊猫</div>
+					</li>
+					<li class="search-item" data-href="ktv_singer_detail.html">
+						<div class="search-pic"><img src="../imgs/panda1.jpg" alt=""></div>
+						<div class="search-txt">功夫熊猫</div>
+					</li>
+				</ul>
+		    </div>
+	    </div>
+	</div>
+	<script type="text/javascript" src="../js/zepto.js"></script>
+	<!-- <script type="text/javascript" src="../js/iscroll.js"></script>  -->
+	<script type="text/javascript" src="../js/public.js"></script>
+	<script type="text/javascript">
+		$("#search-wrap").on("tap", ".search-item", function(){
+			var href = $(this).attr("data-href");
+			href && (window.location.href = href);
+		});
+	</script>
+</body>
+</html>

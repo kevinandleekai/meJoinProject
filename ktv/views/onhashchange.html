@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1,user-scalable=no">
+	<title>Document</title>
+	<style type="text/css">
+		#box{
+			width: 400px;
+			height: 200px;
+			border: 1px solid #000;
+		}
+	</style>
+</head>
+<body>
+	<!-- <button id="btn">点我</button>
+	<div id="box"></div> -->
+	<script>
+		(function(){
+			//如果浏览器支持hashchange事件
+			if ("onhashchange" in window) {
+				//事件绑定
+				if (window.addEventListener) {
+					window.addHashChange = function(func, before) {
+						window.addEventListener("hashchange", func, false);
+					}
+					window.removeHashChange = function(func) {
+						window.removeEventListener("hashchange", func);
+					}
+					return; //结束后面语句的执行
+				}else if (window.attachEvent) {
+					window.addHashChange = function(func, before) {
+						window.attachEvent("onhashchange", func);
+					}
+					window.removeHashChange = function(func) {
+						window.detachEvent(func);
+					}
+					return;//结束后面语句的执行
+				}
+			}
+			var hashChangeFuncs = [];
+			var oldHref = location.href;
+			window.addHashChange = function(func, before) {
+				if (typeof func === "function") {
+					hashChangeFuncs[before ? "unshift" : "push"](func);
+				}
+			}
+			window.removeHashChange = function() {
+				for (var i = hashChangeFuncs.length - 1; i >= 0; i--) {
+					if (hashChangeFuncs[i] === func) {
+						hashChangeFuncs.splice(i, 1);
+					}
+				}
+			}
+			//如果浏览器不支持hashchange事件 用setInterval()检测hash的变化
+			setInterval(function(){
+				var newHref = location.href;
+				if (oldHref != newHref) {
+					oldHref = newHref;
+					for (var i = 0, len = hashChangeFuncs.length; i < len; i++) {
+						hashChangeFuncs[i].call(window, {
+							"type": "hashchange",
+							"newURL": newHref,
+							"oldURL": oldHref
+						})
+					}
+				}
+			},100)();
+		})()
+		addHashChange(function(e){
+			console.log(e.newURL || e.oldURL);
+		});
+		
+		//aJax的封装函数
+		function aJax(options) {
+			options = options || {};
+			options.type = (options.type || "GET").toUpperCase();
+			options.dataType = options.dataType || "json";
+			var params = formatParams(options.data),
+				xhr = null;
+			if (window.XMLHttpRequest) {
+				xhr = new XMLHttpRequest();
+			}else {
+				xhr = new ActiveXObject("Microsoft.XMLHTTP");
+			}
+			xhr.onreadystatechange = function() {
+				if (xhr.readyState === 4) {
+					var satus = xhr.status;
+					if (status >= 200 && status < 300) {
+						options.success && options.success(xhr.responseText, xhr.responseXML);
+					}else {
+						options.fail && options.fail(status);
+					}
+				}
+			}
+			//aJax GET 和 POST的请求传递数据的方式是不同的
+			if (options.type == "GET") {
+				xhr.open("GET", options.url + "?" + params, true);
+				xhr.send(null);
+			}else if (options.type == "POST") {
+				xhr.open("POST", options.url, true);
+				//设置表单提交时的内容类型
+				xhr.setRequestHeader("Content-Type", "application/x-www/form-urlencoded");
+				xhr.send(params);
+			}
+		}
+		//格式化参数
+		function formatParams(data) {
+			var arr = [];
+			for (var attr in data) {
+				arr.push(encodeURIComponent(attr) + "=" + encodeURIComponent(data[attr]));
+			}
+			arr.push(("v=" + Math.random()).replace(".", ""));//在数组的最后一项加入一个随机数，保证每次拿到的请求都是从服务器里面请求得到的，而不是从缓存里面得到的
+			return arr.join("&");
+		}
+
+	/*	aJax({
+			url: "test1.html",
+			type: "POST",
+			data: {name: "super", age: 20},
+			dataType: "JSON",
+			success: function(response, xml) {
+				console.log("执行成功");
+			},
+			fail: function() {
+				console.log("执行失败");
+			}
+		});*/
+	</script>
+</body>
+</html>

@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>onhashchange</title>
+	<style type="text/css">
+		body{font-family: "Microsoft YaHei";}
+		div#home,div#set{
+			width: 200px;
+			height: 250px;
+			border: 1px solid #ccc;
+			float: left;
+			margin-right: 20px;
+			background-color: #f8f8f8;
+			display: none;
+		}
+		.tab {
+			height: 30px;
+			line-height: 30px;
+			border-bottom: 1px solid #ccc;
+			margin-bottom: 10px;
+		}
+		.tab a {
+			padding: 3px 6px;
+			border: 1px solid #ccc;
+			margin-bottom: 10px;
+			cursor: pointer;
+		}
+		.tab a.active {
+			background-color: #f00;
+			color: #fff;
+		}
+	</style>
+</head>
+<body>
+	<div class="tab">
+	   <a href="#homepage" id="homeA">主页</a>
+	   <a href="#setpage" id="homeB">设置</a>
+	</div>
+	<div id="home">主页</div>	
+	<div id="set">设置页面</div>
+	<script type="text/javascript">
+	/*	var oHome = document.getElementById("home");
+		var oSet = document.getElementById("set");
+		var oA = document.getElementById("homeA");
+		var oB = document.getElementById("homeB");
+		window.onhashchange = hashchange;
+		function hashchange() {
+			var hash = window.location.hash;
+			if (!hash || hash === "#") {
+				oHome.style.display = "block";
+				oA.className = "active";
+				oB.className = "";
+
+			}else if (hash === "#homepage") {
+				oHome.style.display = "block";
+				oSet.style.display = "none";
+				oA.className = "active";
+				oB.className = "";
+			}else if (hash === "#setpage") {
+				oHome.style.display = "none";
+				oSet.style.display = "block";
+				oA.className = "";
+				oB.className = "active";
+			}
+		}
+		window.onload = hashchange;*/
+		/*alert(window.location.hash);*/
+
+		function test(a) {
+			switch(a) {
+				case 1: 
+					console.log(1);
+					return;
+				case 2:
+					console.log(2);
+					break;
+			}
+			console.log(3);
+		}
+		test(1);
+	</script>
+</body>
+</html>

@@ -1,0 +1,65 @@
+<!DOCTYPE html> 
+<html lang="en"> 
+<head>     
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1,user-scalable=no">
+<title>Document</title>
+<style type="text/css">
+	body {margin: 0;overflow: hidden;}
+	.box {
+		height: 100px;
+		width: 100px;
+		margin: 10px auto;
+		background-color: #f00;
+	}
+	.subchild {
+		height: 100px;
+		background-color: #f90;
+		margin-right: -50px;
+		margin-left: -50px;
+	}
+	</style>
+</head>
+<body>
+	<!-- 
+		负边距：http://www.cnblogs.com/2050/archive/2012/08/13/2636467.html
+		html的结构如下
+		<div id="mydiv1">First</div>
+		<div id="mydiv2">Second</div> 
+	-->
+	<!-- 
+		css margin负边距 
+		1.如果两个元素都使用了左浮动并且设置margin-right:-20px 
+		#mydiv2会把#mydiv1看成宽度缩小20px（所以会覆盖一部分），但是有趣的是#mydiv1并不会有任何变化，而是依然保持原先的宽度。
+
+
+		2.负的边距好像能减小元素在文档流中的尺寸一样，但事实上，它的尺寸大小并没变，只是文档流在计算元素位置的时候，会认为负边距把元素的尺寸减小了，因此元素的位置也就发生变化了。（注意的是，文档流只能是后面的流向前面的，即文档流只能向左或向上流动，不能向下或向右移动。） 所以，一切只要是由文档流决定的东西，负边距就能起作用了。
+
+
+		3.一个没有设定高度的块状元素，其高度是自动的，具体来说就是由它里面的文档流最后的位置决定的。
+
+		4.负的margin会改变元素的宽度，这的确很让人费解，如果说负边距会改变元素在文档流中的位置还是很好理解的话，那改变宽度这种现象还真的蛮让人不可思议的
+	-->
+	<!-- <ul class="list">
+		<li class="list-item col-33">1</li>
+		<li class="list-item col-33">2</li>
+		<li class="list-item col-33">3</li>
+		<li class="list-item col-33">4</li>
+	</ul> -->
+	<!-- <div class="box"><p>我是文字文我是文字文我是文字文我是文字文我是文字文我是文字文我是</p></div> -->
+	<input id="btn" type="button" value="点我">
+	<div id="test"></div>
+	<script type="text/javascript" src="../js/zepto.js"></script>
+	<script type="text/javascript">
+		// 自定义事件
+		$("#btn").bind("myClick", function(evt){
+			console.log(evt);
+			$("#test").append("自定义事件");
+		});
+		$("#btn").trigger("myClick");
+		$("#btn").click(function(){
+			$(this).trigger("myClick");
+		});
+	</script>
+</body>
+</html>

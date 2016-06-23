@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1">
+    <meta name="format-detection" content="telephone=no"> 
+    <meta name="format-detection" content="email=no">
+    <meta content="yes" content="apple-moblie-web-app-cappable">
+    <meta content="yes" content="apple-touch-fullscreen">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black"> 
+	<title>k歌</title>
+    <script type="text/javascript" src="../js/rem.js"></script>
+	<link rel="stylesheet" href="../css/public.css">
+</head>
+<body>
+    <div class="page">
+
+        <!-- 导航部分 -->
+        <div class="header">
+        	<div class="navbar-top">
+                <i class="back-btn"></i>
+                <h2 class="navbar-title">歌手</h2>
+                <div class="music-record">已点</div>                  
+            </div>
+        </div>
+        <!-- 内容区域 -->
+        <div class="content">
+            <div class="singer-category" id="singer-category">
+                <!-- 搜索区域-->
+                <div class="search-box">
+                    <form class="search-form">
+                        <i class="search-icon iconfont">&#xe607;</i>
+                        <div class="search-form-input">
+                        <input type="text" placeholder="歌星歌曲 简拼"></div>
+                    </form>
+                </div>
+                <!-- 轮播图区域 -->
+                <div class="swiper"></div>
+                <!-- 分类列表区域 -->
+                <div class="category-cont">
+                    <ul class="category-list mar-b20">
+                        <li class="category-item" data-href="ktv_singers_list.html">华语男歌手</li>
+                        <li class="category-item" data-href="ktv_singers_list.html">华语女歌手</li>
+                        <li class="category-item" data-href="ktv_singers_list.html">华语组合</li>
+                    </ul>
+                    <ul class="category-list">
+                        <li class="category-item" data-href="ktv_singers_list.html">欧美歌手</li>
+                        <li class="category-item" data-href="ktv_singers_list.html">日韩歌手</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <!-- 底部导航区域 -->
+        <div class="footer">
+            <div class="tabbar navbar-bottom" id="tabbar">
+                <div class="tabbar-item">
+                    <div class="tabbar-icon iconfont">&#xe603;</div>
+                    <p class="tabbar-label">遥控</p>
+                </div>
+                <div class="tabbar-item">
+                    <div class="tabbar-icon iconfont">&#xe602;</div>
+                    <p class="tabbar-label">已点歌</p>
+                </div>
+                <div class="tabbar-item tabbar-item-center" data-href="../index.html">
+                    <div class="tabbar-icon-center">
+                        <div class="tabbar-icon iconfont">&#xe601;</div>
+                        <p class="tabbar-label">K歌</p>
+                    </div>
+                </div>
+                <div class="tabbar-item">
+                    <div class="tabbar-icon iconfont">&#xe606;</div>
+                    <p class="tabbar-label">发现</p>
+                </div>
+                <div class="tabbar-item" data-href="ktv_mine.html">
+                    <div class="tabbar-icon iconfont">&#xe604;</div>
+                    <p class="tabbar-label">我的</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script type="text/javascript" src="../js/zepto.js"></script> 
+    <!-- <script type="text/javascript" src="../js/iscroll.js"></script> -->
+    <script type="text/javascript" src="../js/iscroll.js"></script>
+    <script type="text/javascript" src="../js/public.js"></script>
+    <script type="text/javascript">
+        $("#singer-category").on("tap", ".category-item", function(){
+            var href = $(this).attr("data-href");
+            href && (window.location.href = href);
+        });
+    </script>
+</body>
+</html>

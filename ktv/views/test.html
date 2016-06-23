@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1,user-scalable=no">
+	<title>Document</title>
+	<!-- <link rel="stylesheet" href="../css/sm.css">
+	<link rel="stylesheet" href="../css/common.css"> -->
+	<style type="text/css">
+		body {margin: 0;font-family: "Microsoft YaHei";}
+		ul {padding: 0;margin: 0;list-style: none;}	
+		.box1 {
+			height: 50px;background-color: #f90;text-align: center;
+			position: relative;line-height: 50px;
+		}
+		.subbox	{
+			display: inline-block;padding: 5px;background-color: #00f;font-size: 14px;
+			vertical-align: middle;line-height: normal;
+			
+		}
+		.group {
+			position: absolute;
+			top: 50%;
+			left: 50%;
+			-webkit-transform: translate(-50%, -50%);
+		}
+		.page1, .page2 {
+			width: 400px;
+			height: 200px;
+			border: 1px solid #000;
+			position: absolute;
+			top: 100px;
+			left: 0;
+		}
+		.page1 {
+			background-color: #f00;
+		}
+		.page2 {
+			background-color: #0f0;
+		}
+		.active {
+			-webkit-animation: mymove 0.5s;
+			animation: mymove 0.5s;
+			-webkit-animation-fill-mode: both;
+			animation-fill-mode: both;
+		}
+		@-webkit-keyframes mymove {
+			from {
+				-webkit-transform: translate(0, 0);
+				-webkit-transform: translate(0, 0);
+			}
+			to {
+				-webkit-transform: translate(100%, 0);
+				-webkit-transform: translate(100%, 0);
+			}
+		}
+	</style>
+</head>
+<body>
+	<!-- <div class="box1">
+		<div class="subbox">子元素</div>
+		<div class="subbox">子元素</div>
+	</div> -->
+	<button id="btn1">切换page1</button>
+	<button id="btn2">切换page2</button>
+	<div class="page1" id="page1"></div>
+	<div class="page2" id="page2"></div>
+	<!-- transition的用法： transition: property-name duration timing-function delay-->
+	<!-- animation:  animation-name animation-duration animation-timing-function animation-delay animation-iteration-count animation-direction-->
+	<script>
+		// 生成 [0 - max] 之间的随机整数 包括 0 和 max, max 为大于 0 的整数  
+		// parseInt(Math.random() * max, 10) + 1;
+		// Math.floor(Math.random() * max) + 1;
+		// Math.ceil(Math.random() * 5);
+		// 例如生成 [0 5]之间的随机整数
+		/*var random1 = parseInt(Math.random() * 5) + 1;
+		var random2 = Math.floor(Math.random() * 5) + 1;
+		var random3 = Math.ceil(Math.random() * 5);
+		console.log("random1:" + random1, "random2:" + random2, "random3:" + random3);*/
+		var oBtn1 = document.getElementById("btn1"),
+			oBtn2 = document.getElementById("btn2"),
+			oPage1 = document.getElementById("page1"),
+			oPage2 = document.getElementById("page1");
+		oBtn1.onclick = function() {
+			oPage1.className = "page1 active";
+		}
+	</script>
+</body>
+</html>
